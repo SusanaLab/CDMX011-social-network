@@ -17,6 +17,7 @@ background: #FBEBDB;
   display:flex;
   flex-direction: column;
   justify-content: center;
+
   background: #eadaf3;
   border-radius: 9px;
   margin: 20px;
@@ -56,6 +57,7 @@ height: 200px;
 margin: 5px;
 border-radius: 5px;
 border-color: bisque;
+
   }
 
 #boton-ingresar{
@@ -76,6 +78,8 @@ border-color: bisque;
   background-color: #e09dff;
   border-radius: 3px;
   border-color: bisque;
+
+
   }
 .registro{
   color: rgb(88, 88, 88);
@@ -239,6 +243,7 @@ top: 20px;
   border-radius: 3px;
   border-color: bisque;
 
+
 } 
 #googleBoton{
   background-color: #7c8ef7; 
@@ -251,4 +256,5 @@ top: 20px;
   width: 50px;
   height: 30px;
 }
+
 
