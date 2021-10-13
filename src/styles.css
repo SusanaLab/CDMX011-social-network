@@ -1,3 +1,4 @@
+
 :root{
   background: #FBEBDB;
 }
@@ -112,11 +113,13 @@ color: #8D8A8A;
 }
 .letra-o{
   font-family: Ranga;
+
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   color: #8D8A8A;
+
 }
 #homeDiv{
   display:flex;
@@ -220,6 +223,7 @@ top: 20px;
 #boton-crear-cuenta{
   position:relative;
   align-content: center;
+
   text-align: center;
   font-size: 16px;
   line-height: 16px;
@@ -227,12 +231,14 @@ top: 20px;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+
   border-color: bisque;
   color: rgb(88, 88, 88);
   position: center;
   background-color: #e09dff;
   border-radius: 3px;
   border-color: bisque;
+
 } 
 #googleBoton{
   background-color: #7c8ef7; 
@@ -245,3 +251,4 @@ top: 20px;
   width: 50px;
   height: 30px;
 }
+
