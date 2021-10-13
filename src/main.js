@@ -1,18 +1,22 @@
 /* eslint-disable import/no-cycle */
-/* eslint-disable import/no-unresolved */
-import { inicio } from './components/iniciar.js';
-import { muro } from './components/muro.js';
-import { registro } from './components/registro.js';
+
+import { inicio } from './Component/Iniciar.js';
+// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/named
+import { muro } from './Component/Muro.js';
+// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line no-unused-vars
+import { registro } from './Component/Registro.js';
+
 
 const rootDiv = document.getElementById('root');
 
 const rutas = {
   '/': inicio,
-  '/muro': muro,
+
   '/registro': registro,
+  '/muro': muro,
 };
-// eslint-disable-next-line no-console
-console.log(rutas);
 
 export const onNavigate = (pathname) => {
   window.history.pushState(
@@ -24,12 +28,12 @@ export const onNavigate = (pathname) => {
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
   }
-
-  rootDiv.appendChild(rutas[pathname]());
+  rootDiv.appendChild(rutas[window.location.pathname]());
 };
-
 const component = rutas[window.location.pathname];
 
+
+ 
 window.onpopstate = () => {
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);
@@ -37,4 +41,4 @@ window.onpopstate = () => {
   rootDiv.appendChild(rutas[window.location.pathname]());
 };
 
-rootDiv.appendChild(component());
+
