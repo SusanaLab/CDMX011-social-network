@@ -27,8 +27,6 @@ export function crateAccountWithEmail() {
       const errorMessage = error.message;
       alert(errorCode);
       alert(errorMessage);
-      // document.getElementById("demo").innerHTML = err.message;
-      // ..
     });
 }
 
@@ -45,25 +43,17 @@ export function crateAccountWithGoogle() {
       alert(errorMessage);
     });
 }
-// google authentification
-/* const loginGoogle = () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  return firebase.auth.signInWithPopup(provider);
-};
-export function crateAccountWithGoogle() {
-  const googleBoton = document.querySelector('#googleBoton');
-  googleBoton.addEventListener('click', (e) => {
-    e.preventDefault();
-    loginGoogle();
-    // eslint-disable-next-line no-undef
-    then(() => {
+export function crateAccountWithGithub() {
+  const provider = new firebase.auth.GithubAuthProvider();
+  firebase.auth()
+    .signInWithPopup(provider)
+    .then((result) => {
       onNavigate('/muro');
-    })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorCode);
-        alert(errorMessage);
-      });
-  });
-} */
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert('');
+      console.log(errorCode);
+      console.log(errorMessage);
+    });
+}

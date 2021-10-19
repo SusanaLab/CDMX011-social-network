@@ -2,13 +2,13 @@
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 // eslint-disable-next-line import/no-cycle
-import { crateAccountWithGoogle } from '../lib/firebaseAuth.js';
+import { crateAccountWithGoogle, crateAccountWithGithub } from '../lib/firebaseAuth.js';
 
 export const inicio = () => {
   const inicioDiv = document.createElement('div');
   inicioDiv.id = 'inicioDiv';
   const marca = document.createElement('h1');
-  marca.className = 'marca';
+  marca.id = 'marca';
   marca.textContent = '¡Bienvenida a Transmuta!';
   const slogan = document.createElement('h3');
   slogan.textContent = '"Transformando las emociones en poder"';
@@ -35,17 +35,19 @@ export const inicio = () => {
   botonIngresar.textContent = 'Ingresar';
   botonIngresar.id = 'boton-ingresar';
   botonIngresar.addEventListener('click', () => onNavigate('/muro'));
-  const googleBoton = document.createElement('img');
-  googleBoton.className = 'google';
+  const googleBoton = document.createElement('button');
+  googleBoton.id = 'google';
+  googleBoton.textContent = 'Ingresar con Google';
   googleBoton.src = '/Assets/google.png';
   googleBoton.addEventListener('click', () => {
     crateAccountWithGoogle();
   });
-  const githubBoton = document.createElement('img');
-  githubBoton.className = 'git';
+  const githubBoton = document.createElement('button');
+  githubBoton.id = 'git';
+  githubBoton.textContent = 'Ingresar con Github';
   githubBoton.src = '/Assets/github.png';
   githubBoton.addEventListener('click', () => {
-    // crateAccountWithGoogle();
+    crateAccountWithGithub();
   });
   const opcion = document.createElement('p');
   opcion.textContent = 'o';

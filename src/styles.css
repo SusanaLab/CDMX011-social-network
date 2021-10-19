@@ -7,6 +7,9 @@ flex-wrap: wrap;
 justify-content: center;
 align-items: center;
 background: #FBEBDB;
+font-family: Forum;
+font-style: normal;
+font-weight: normal;
 }
 #divInicioDeSesion{
   top: -30px;
@@ -23,7 +26,12 @@ background: #FBEBDB;
   border-radius: 10px;
   align-items: center;
 }
+#marca{
+  position:relative;
+  justify-content: center;
+  color: #787878;
 
+}
 #imagenInicioSesion{
   width: 100px;
   height: 320px;  
@@ -34,12 +42,7 @@ img{
   margin: auto;
   width: 204px; 
   }
-.marca{
-  position:center;
-  justify-content: center;
-  color: #787878;
 
-}
 #slogan{
   color: #787878;
 }
@@ -82,7 +85,7 @@ border-color: bisque;
   color: rgb(88, 88, 88);
  position: center;
  border-radius: 3px;
- border-color: bisque;
+ padding: 0px;
 }
 p{
   font-family: 'Courier New', Courier, monospace;
@@ -125,9 +128,15 @@ color: #8D8A8A;
   flex-wrap: wrap;
   justify-content: center;
   background-color: #FBEBDB; 
+  font-family: Forum;
+ font-style: normal;
+ font-weight: normal;
 }
 
 #marcaMuro{
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
   color:#787878;
   position: relative;
   justify-content: center;
@@ -168,6 +177,9 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 background: #FBEBDB;
+font-family: Forum;
+font-style: normal;
+font-weight: normal;
 }
 #titulo{
   width: 192px;
@@ -178,17 +190,26 @@ background: #FBEBDB;
   font-weight: normal;
   font-size: 36px;
   line-height: 40px;
-  
+  margin: 70px;
   color: #787878;
 } 
 #formRegistro{
+ 
+top: -30px;
   position: relative;
-  align-items: center;
+  width: 250px;
+  height: 320px;
   display:flex;
   flex-direction: column;
   justify-content: center;
+  background: #eadaf3;
+  border-radius: 9px;
+  margin: 20px;
+  padding: 11px 8px;
+  border-radius: 10px;
+  align-items: center;
 }
-
+ 
 #nombreRegistro{
  
 position: relative;
@@ -236,21 +257,41 @@ top: 20px;
   border-radius: 3px;
   border-color: bisque;
 } 
-#googleBoton{
-  background-color: #7c8ef7; 
-  color: rgb(255, 255, 255);
+
+#git{
+  position:relative;
+  align-content: center;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  margin: 10px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-color: bisque;
+  color: rgb(88, 88, 88);
+  position: center;
+  background-color: #e09dff;
   border-radius: 3px;
   border-color: bisque;
-  margin: 8px;
+
 }
-.git{
-  width: 100px;
-  margin: 8px;
-}
-.google{
-  width: 100px;
-  height: 40px;
-  margin: 8px;
+#google{
+  position:relative;
+  align-content: center;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  margin: 10px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-color: bisque;
+  color: rgb(88, 88, 88);
+  position: center;
+  background-color: #e09dff;
+  border-radius: 3px;
+  border-color: bisque;
 }
 #homeImagen{
   width: 50px;

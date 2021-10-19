@@ -36,11 +36,11 @@ export const registro = () => {
   homeImagen.id = 'homeImagen';
   homeImagen.src = '/Assets/home.jpg';
   homeImagen.addEventListener('click', () => onNavigate('/'));
+  formRegistro.append(nombre);
   formRegistro.append(correoElectronico);
   formRegistro.append(contraseña);
   formRegistro.append(botonCrearCuenta);
   registroDiv.append(titulo);
-  registroDiv.append(nombre);
   registroDiv.append(formRegistro);
   registroDiv.append(homeImagen);
   return registroDiv;
