@@ -36,15 +36,17 @@ export const inicio = () => {
   const botonIngresar = document.createElement('button');
   botonIngresar.textContent = 'Ingresar';
   botonIngresar.id = 'boton-ingresar';
-  const googleBoton = document.createElement('button');
-  googleBoton.id = 'google';
+  const googleBoton = document.createElement('img');
   googleBoton.textContent = 'Ingresar con Google';
+  googleBoton.src = '/Assets/google.png';
+  googleBoton.id = 'google';
   googleBoton.addEventListener('click', () => {
     crateAccountWithGoogle();
   });
-  const githubBoton = document.createElement('button');
-  githubBoton.id = 'git';
+  const githubBoton = document.createElement('img');
   githubBoton.textContent = 'Ingresar con Github';
+  githubBoton.src = '/Assets/git.png';
+  githubBoton.id = 'git';
   githubBoton.addEventListener('click', () => {
     crateAccountWithGithub();
   });

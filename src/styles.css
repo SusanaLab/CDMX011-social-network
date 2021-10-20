@@ -272,41 +272,14 @@ font-family: Forum;
 } 
 
 #git{
-  position:relative;
-  align-content: center;
-  text-align: center;
-  font-size: 16px;
-  line-height: 16px;
   margin: 10px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  border-color: bisque;
-  color: rgb(88, 88, 88);
-  position: center;
-  background-color: #e09dff;
-  border-radius: 3px;
-  border-color: bisque;
-  font-family: Forum;
-
+  max-width:50%;
+  max-height:50%;
 }
 #google{
-  position:relative;
-  align-content: center;
-  text-align: center;
-  font-size: 16px;
-  line-height: 16px;
   margin: 10px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  border-color: bisque;
-  color: rgb(88, 88, 88);
-  position: center;
-  background-color: #e09dff;
-  border-radius: 3px;
-  border-color: bisque;
-  font-family: Forum;
+  max-width:50%;
+  max-height:50%;
 }
 #homeImagen{
   width: 50px;
