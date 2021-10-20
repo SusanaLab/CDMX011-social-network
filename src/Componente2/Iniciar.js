@@ -31,21 +31,20 @@ export const inicio = () => {
   contraseña.id = 'contraseña';
   contraseña.placeholder = 'Contraseña';
   contraseña.type = 'password';
+  contraseña.name = 'password';
+  contraseña.autocomplete = 'on';
   const botonIngresar = document.createElement('button');
   botonIngresar.textContent = 'Ingresar';
   botonIngresar.id = 'boton-ingresar';
-  botonIngresar.addEventListener('click', () => onNavigate('/muro'));
   const googleBoton = document.createElement('button');
   googleBoton.id = 'google';
   googleBoton.textContent = 'Ingresar con Google';
-  googleBoton.src = '/Assets/google.png';
   googleBoton.addEventListener('click', () => {
     crateAccountWithGoogle();
   });
   const githubBoton = document.createElement('button');
   githubBoton.id = 'git';
   githubBoton.textContent = 'Ingresar con Github';
-  githubBoton.src = '/Assets/github.png';
   githubBoton.addEventListener('click', () => {
     crateAccountWithGithub();
   });

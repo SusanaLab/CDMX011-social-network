@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-alert */
 import firebase from './secret.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
@@ -14,12 +12,9 @@ export function crateAccountWithEmail() {
     console.log(contraseña);
     firebase.auth()
       .createUserWithEmailAndPassword(correo, contraseña)
-      .then((userCredential) => {
+      .then(() => {
         onNavigate('/muro');
-        const user = userCredential.user;
         formRegistro.reset();
-        console.log(user);
-        // ...
       });
   })
     .catch((error) => {
@@ -34,7 +29,7 @@ export function crateAccountWithGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth()
     .signInWithPopup(provider)
-    .then((result) => {
+    .then(() => {
       onNavigate('/muro');
     }).catch((error) => {
       const errorCode = error.code;
@@ -47,13 +42,20 @@ export function crateAccountWithGithub() {
   const provider = new firebase.auth.GithubAuthProvider();
   firebase.auth()
     .signInWithPopup(provider)
-    .then((result) => {
+    .then(() => {
       onNavigate('/muro');
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert('');
+      alert('hi');
       console.log(errorCode);
       console.log(errorMessage);
     });
+}
+export function logout() {
+  firebase.auth().signOut().then(() => {
+  // Sign-out successful.
+  }).catch(() => {
+    alert('hi');
+  });
 }
