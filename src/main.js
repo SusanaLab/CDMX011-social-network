@@ -11,7 +11,6 @@ const rutas = {
   '/muro': muro,
   '/registro': registro,
 };
-
 export const onNavigate = (pathname) => {
   window.history.pushState(
     {},
@@ -25,7 +24,6 @@ export const onNavigate = (pathname) => {
 
   rootDiv.appendChild(rutas[pathname]());
 };
-
 const component = rutas[window.location.pathname];
 
 window.onpopstate = () => {

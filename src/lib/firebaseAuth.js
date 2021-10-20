@@ -7,55 +7,45 @@ export function crateAccountWithEmail() {
   formRegistro.addEventListener('submit', (e) => {
     e.preventDefault();
     const correo = document.querySelector('#c-electronico').value;
-    console.log(correo);
     const contraseña = document.querySelector('.contraseña').value;
-    console.log(contraseña);
     firebase.auth()
       .createUserWithEmailAndPassword(correo, contraseña)
-      .then(() => {
+      .then((userCredential) => {
         onNavigate('/muro');
+        const user = userCredential.user;
         formRegistro.reset();
+        console.log(user);
+        // ...
       });
-  })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorCode);
-      alert(errorMessage);
-    });
+  });
 }
-
 export function crateAccountWithGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth()
     .signInWithPopup(provider)
     .then(() => {
       onNavigate('/muro');
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorCode);
-      alert(errorMessage);
+    }).catch(() => {
+      alert('Inicio de sesion exitoso');
     });
 }
-export function crateAccountWithGithub() {
+export function createAccountWithGithub() {
   const provider = new firebase.auth.GithubAuthProvider();
-  firebase.auth()
+  firebase
+    .auth()
     .signInWithPopup(provider)
+    // eslint-disable-next-line no-unused-vars
     .then(() => {
       onNavigate('/muro');
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert('hi');
-      console.log(errorCode);
-      console.log(errorMessage);
+    // eslint-disable-next-line no-unused-vars
+    }).catch(() => {
+      alert('errorMessage');
     });
 }
-export function logout() {
+export function signOut() {
   firebase.auth().signOut().then(() => {
-  // Sign-out successful.
+    onNavigate('/');
   }).catch(() => {
-    alert('hi');
+    alert('Por favor intentalo de nuevo');
   });
 }

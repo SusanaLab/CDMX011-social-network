@@ -1,14 +1,13 @@
-// eslint-disable-next-line import/no-unresolved
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 // eslint-disable-next-line import/no-cycle
-import { crateAccountWithGoogle, crateAccountWithGithub } from '../lib/firebaseAuth.js';
+import { crateAccountWithGoogle, createAccountWithGithub } from '../lib/firebaseAuth.js';
 
 export const inicio = () => {
   const inicioDiv = document.createElement('div');
   inicioDiv.id = 'inicioDiv';
   const marca = document.createElement('h1');
-  marca.id = 'marca';
+  marca.className = 'marca';
   marca.textContent = '¡Bienvenida a Transmuta!';
   const slogan = document.createElement('h3');
   slogan.textContent = '"Transformando las emociones en poder"';
@@ -31,25 +30,23 @@ export const inicio = () => {
   contraseña.id = 'contraseña';
   contraseña.placeholder = 'Contraseña';
   contraseña.type = 'password';
-  contraseña.name = 'password';
-  contraseña.autocomplete = 'on';
   const botonIngresar = document.createElement('button');
   botonIngresar.textContent = 'Ingresar';
   botonIngresar.id = 'boton-ingresar';
   const googleBoton = document.createElement('img');
-  googleBoton.textContent = 'Ingresar con Google';
-  googleBoton.src = '/Assets/google.png';
   googleBoton.id = 'google';
+  googleBoton.src = '/Assets/google.png';
   googleBoton.addEventListener('click', () => {
+    // eslint-disable-next-line no-undef
     crateAccountWithGoogle();
   });
   const githubBoton = document.createElement('img');
-  githubBoton.textContent = 'Ingresar con Github';
-  githubBoton.src = '/Assets/git.png';
   githubBoton.id = 'git';
+  githubBoton.src = '/Assets/git.png';
   githubBoton.addEventListener('click', () => {
-    crateAccountWithGithub();
+    createAccountWithGithub();
   });
+
   const opcion = document.createElement('p');
   opcion.textContent = 'o';
   opcion.className = 'letra-o';
@@ -60,7 +57,6 @@ export const inicio = () => {
   registro.textContent = 'Aqui';
   registro.className = 'registro';
   registro.addEventListener('click', () => onNavigate('/registro'));
-
   divInicioDeSesion.appendChild(inicioSesion);
   divInicioDeSesion.appendChild(correoElectronico);
   divInicioDeSesion.appendChild(contraseña);
