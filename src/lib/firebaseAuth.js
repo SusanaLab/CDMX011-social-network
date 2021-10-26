@@ -49,3 +49,33 @@ export function signOut() {
     alert('Por favor intentalo de nuevo');
   });
 }
+/* export function currentUser(){
+  firebase.auth().onAuthStateChanged((user) =>{
+    if(user){
+
+    }
+  })
+}
+
+export const createPost = (texto, user) => {
+  const obj = {
+    texto,
+    user; firebase.auth().currentUser;
+  }
+    .firebase.firestore();
+  console.log(obj);
+};
+
+export function createPost() {
+  const ff = firebase.firestore();
+  ff.collection('publicaciones').doc('post').set({
+    publicar: publicar.value,
+  })
+    .then(() => {
+      console.log('Document successfully written!');
+    })
+    .catch((error) => {
+      console.error('Error writing document: ', error);
+    });
+}
+ */

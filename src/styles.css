@@ -131,9 +131,10 @@ color: #8D8A8A;
 }
 #homeDiv{
   display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #FBEBDB; 
+flex-direction: column;
+
+align-items: center;
+background: #FBEBDB;
 }
 
 #marcaMuro{
@@ -146,10 +147,7 @@ color: #8D8A8A;
   font-family: Forum;
   position: relative;
   background-color: #E5E0E8;
-  width: 100%;
- height: 60px;
- position: relative;
- margin: 30px;
+ margin: 5px;
 }
 #boton-publicar{
   font-family: Forum;
@@ -323,3 +321,20 @@ line-height: 22px;
 color: #696666;
 font-family: Forum;
 }
+
+#publicarDiv{
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: #FBEBDB;
+margin: 10px;
+padding: 10px;
+}
+
+#formPublicaciones{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:flex-start
+};
