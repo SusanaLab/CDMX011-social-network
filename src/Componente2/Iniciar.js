@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 // eslint-disable-next-line import/no-cycle
-import { crateAccountWithGoogle, createAccountWithGithub } from '../lib/firebaseAuth.js';
+import { crearCuentaConGoogle, crearCuentaConGithub } from '../lib/firebaseAuth.js';
 
 export const inicio = () => {
   const inicioDiv = document.createElement('div');
@@ -38,13 +38,13 @@ export const inicio = () => {
   googleBoton.src = '/Assets/google.png';
   googleBoton.addEventListener('click', () => {
     // eslint-disable-next-line no-undef
-    crateAccountWithGoogle();
+    crearCuentaConGoogle(onNavigate);
   });
   const githubBoton = document.createElement('img');
   githubBoton.id = 'git';
   githubBoton.src = '/Assets/git.png';
   githubBoton.addEventListener('click', () => {
-    createAccountWithGithub();
+    crearCuentaConGithub();
   });
 
   const opcion = document.createElement('p');

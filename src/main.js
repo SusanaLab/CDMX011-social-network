@@ -25,7 +25,7 @@ export const onNavigate = (pathname) => {
   rootDiv.appendChild(rutas[pathname]());
 };
 const component = rutas[window.location.pathname];
-
+// crea un historial de las rutas que ha contenido
 window.onpopstate = () => {
   while (rootDiv.firstChild) {
     rootDiv.removeChild(rootDiv.firstChild);

@@ -2,7 +2,7 @@
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 // eslint-disable-next-line import/no-cycle
-import { crateAccountWithEmail } from '../lib/firebaseAuth.js';
+import { crearCuentaConCorreoYContraseña } from '../lib/firebaseAuth.js';
 
 export const registro = () => {
   const registroDiv = document.createElement('div');
@@ -36,7 +36,7 @@ export const registro = () => {
   botonCrearCuenta.textContent = 'Crear cuenta';
   botonCrearCuenta.id = 'boton-crear-cuenta';
   botonCrearCuenta.addEventListener('click', () => {
-    crateAccountWithEmail();
+    crearCuentaConCorreoYContraseña();
   });
   const homeImagen = document.createElement('img');
   homeImagen.textContent = 'Crear cuenta';

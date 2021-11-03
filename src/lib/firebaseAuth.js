@@ -2,7 +2,7 @@ import firebase from './secret.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
 
-export function crateAccountWithEmail() {
+export function crearCuentaConCorreoYContraseña() {
   const formRegistro = document.querySelector('#formRegistro');
   formRegistro.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -19,17 +19,17 @@ export function crateAccountWithEmail() {
       });
   });
 }
-export function crateAccountWithGoogle() {
+export function crearCuentaConGoogle(callback) {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth()
     .signInWithPopup(provider)
     .then(() => {
-      onNavigate('/muro');
+      callback('/muro');
     }).catch(() => {
       alert('Inicio de sesion exitoso');
     });
 }
-export function createAccountWithGithub() {
+export function crearCuentaConGithub() {
   const provider = new firebase.auth.GithubAuthProvider();
   firebase
     .auth()
@@ -42,40 +42,19 @@ export function createAccountWithGithub() {
       alert('errorMessage');
     });
 }
-export function signOut() {
+export function cerrarSesion() {
   firebase.auth().signOut().then(() => {
     onNavigate('/');
   }).catch(() => {
     alert('Por favor intentalo de nuevo');
   });
 }
-/* export function currentUser(){
-  firebase.auth().onAuthStateChanged((user) =>{
-    if(user){
 
-    }
-  })
-}
-
-export const createPost = (texto, user) => {
-  const obj = {
-    texto,
-    user; firebase.auth().currentUser;
+/* const fire = firebaseApp.auth().onAuthStateChanged((user) => {
+  if (user) {
+    const { currentUser } = firebaseApp.auth();
+    console.log('Currently logged in user', currentUser);
+    // eslint-disable-next-line no-empty
+  } else {
   }
-    .firebase.firestore();
-  console.log(obj);
-};
-
-export function createPost() {
-  const ff = firebase.firestore();
-  ff.collection('publicaciones').doc('post').set({
-    publicar: publicar.value,
-  })
-    .then(() => {
-      console.log('Document successfully written!');
-    })
-    .catch((error) => {
-      console.error('Error writing document: ', error);
-    });
-}
- */
+}); */
