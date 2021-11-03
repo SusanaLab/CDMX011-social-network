@@ -37,10 +37,14 @@ export const muro = () => {
   muroDiv.appendChild(botonSalir);
   const plantillaPublicacion = (publicacion) => {
     const divPost = document.createElement('div');
-    const html = `
-
-    <p id="parrafo"> ${publicacion.texto}</p> <button class="delete"  deleteData() > Eliminar </button>`;
-    divPost.innerHTML = html;
+    const textoPublicacion = document.createElement('p');
+    textoPublicacion.id = 'parrafo';
+    textoPublicacion.textContent = publicacion.texto;
+    divPost.appendChild(textoPublicacion);
+    const botonEliminar = document.createElement('button');
+    botonEliminar.textContent = 'Eliminar';
+    botonEliminar.className = 'delete';
+    divPost.appendChild(botonEliminar);
     publicarDiv.appendChild(divPost);
   };
 
