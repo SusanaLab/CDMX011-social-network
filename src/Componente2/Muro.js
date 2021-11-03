@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-cycle
 import { cerrarSesion } from '../lib/firebaseAuth.js';
-import { obtenerData, guardarPublicacion, actualizar } from '../lib/firestore.js';
+import {
+  obtenerData, guardarPublicacion, actualizar, eliminarPublicacion,
+} from '../lib/firestore.js';
 
 export const muro = () => {
   const muroDiv = document.createElement('div');
@@ -37,7 +39,7 @@ export const muro = () => {
     const divPost = document.createElement('div');
     const html = `
 
-    <p id="parrafo"> ${publicacion.texto}</p> <button class="delete" > Eliminar </button>`;
+    <p id="parrafo"> ${publicacion.texto}</p> <button class="delete"  deleteData() > Eliminar </button>`;
     divPost.innerHTML = html;
     publicarDiv.appendChild(divPost);
   };
@@ -53,5 +55,14 @@ export const muro = () => {
     });
   };
   imprimirData();
+
+  const deleteData = () => {
+    actualizar((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, doc.data());
+      eliminarPublicacion(plantillaPublicacion(doc.id));
+    });
+  };
+  deleteData();
   return muroDiv;
 };
