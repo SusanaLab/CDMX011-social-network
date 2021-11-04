@@ -1,8 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import { cerrarSesion } from '../lib/firebaseAuth.js';
-import {
-  obtenerData, guardarPublicacion, actualizar, eliminarPublicacion,
-} from '../lib/firestore.js';
+import { guardarPublicacion, actualizar, eliminarPublicacion } from '../lib/firestore.js';
 
 export const muro = () => {
   const muroDiv = document.createElement('div');
@@ -19,7 +17,7 @@ export const muro = () => {
   botonPublicar.id = 'boton-publicar';
   botonPublicar.addEventListener('click', () => {
     guardarPublicacion(publicar.value);
-    console.log(publicar.value);
+    // console.log(publicar.value, "publicar");
   });
   const publicarDiv = document.createElement('div');
   publicarDiv.id = 'publicarDiv';
@@ -35,7 +33,7 @@ export const muro = () => {
   muroDiv.appendChild(formPublicaciones);
   muroDiv.appendChild(publicarDiv);
   muroDiv.appendChild(botonSalir);
-  const plantillaPublicacion = (publicacion) => {
+  const plantillaPublicacion = (publicacion, id) => {
     const divPost = document.createElement('div');
     const textoPublicacion = document.createElement('p');
     textoPublicacion.id = 'parrafo';
@@ -44,29 +42,24 @@ export const muro = () => {
     const botonEliminar = document.createElement('button');
     botonEliminar.textContent = 'Eliminar';
     botonEliminar.className = 'delete';
+    botonEliminar.id = id;
+    botonEliminar.addEventListener('click', () => {
+      eliminarPublicacion(id);
+    });
+    // console.log(botonEliminar.id, 'eliminar');
     divPost.appendChild(botonEliminar);
     publicarDiv.appendChild(divPost);
   };
 
   const imprimirData = () => {
-    obtenerData();
     actualizar((querySnapshots) => {
       querySnapshots.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, doc.data());
-        plantillaPublicacion(doc.data());
+        plantillaPublicacion(doc.data(), doc.id);
       });
     });
   };
   imprimirData();
-
-  const deleteData = () => {
-    actualizar((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, doc.data());
-      eliminarPublicacion(plantillaPublicacion(doc.id));
-    });
-  };
-  deleteData();
   return muroDiv;
 };

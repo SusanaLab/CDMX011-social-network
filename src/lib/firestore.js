@@ -2,8 +2,9 @@ import firebase from './secret.js';
 
 const db = firebase.firestore();
 
-export const obtenerData = () => db.collection('2')
-  .get();
+/* export const obtenerData = () => db.collection('2')
+  .get(); */
+export const obtenerPublicion = (id) => db.collection('2').doc(id).get();
 
 export const guardarPublicacion = (texto) => {
   db.collection('2').doc().set({
