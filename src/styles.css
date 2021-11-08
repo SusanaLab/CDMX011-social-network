@@ -365,5 +365,29 @@ align-items:center
 
 .delete{
   border-radius: 3px;
-  background-color: #e8c3fa;
+  width: 48px;
+  height: 48px;
+  position: relative;
+  margin: 0%;
+}
+.like{
+  border-radius: 3px;
+  width: 48px;
+  height: 48px;
+  position: relative;
+  margin: 0%;
+}
+.editar{
+  border-radius: 3px;
+  width: 48px;
+  height: 48px;
+ position: relative;
+ border-bottom: 7px;
+ margin: 0%;
+}
+#divBoton{
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: flex-start;
 }
