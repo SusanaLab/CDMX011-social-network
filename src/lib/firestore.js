@@ -2,8 +2,6 @@ import firebase from './secret.js';
 
 const db = firebase.firestore();
 
-/* export const obtenerData = () => db.collection('2')
-  .get(); */
 export const obtenerPublicion = (id) => db.collection('2').doc(id).get();
 
 export const guardarPublicacion = (texto) => {
@@ -11,10 +9,9 @@ export const guardarPublicacion = (texto) => {
     texto,
   });
 };
+
 export const actualizar = (callback) => db.collection('2').onSnapshot(callback);
 
-// eslint-disable-next-line max-len
 export const eliminarPublicacion = (id) => db.collection('2').doc(id).delete();
 
-// eslint-disable-next-line max-len
-// export const recargar = (callback) => db.collection('2').onSnapshot(callback);
+export const dataEditar = (id) => db.collection('2').doc(id).get();

@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-cycle
 import { cerrarSesion } from '../lib/firebaseAuth.js';
-import { guardarPublicacion, actualizar, eliminarPublicacion } from '../lib/firestore.js';
+import {
+  guardarPublicacion, actualizar, eliminarPublicacion, dataEditar,
+} from '../lib/firestore.js';
 
 export const muro = () => {
   const muroDiv = document.createElement('div');
@@ -46,6 +48,24 @@ export const muro = () => {
     botonEditar.src = '/Assets/editar.png';
     botonEditar.className = 'editar';
     botonEditar.id = id;
+    botonEditar.addEventListener('click', () => {
+      dataEditar(id);
+
+      /* function editar (id){
+       const algo = 'hola';
+      console.log('algo');
+        document.getElementById('').value = texto;
+        guardarEdicion.innerHTML = 'editar';
+        .then(function() {
+
+        })
+        let guardaEdicion = document.getElementById('guardaEdicion');
+        .catch(function(error){
+
+        })
+
+      } */
+    });
     const botonLike = document.createElement('img');
     botonLike.src = '/Assets/like.png';
     botonLike.className = 'like';
@@ -63,6 +83,7 @@ export const muro = () => {
   };
   const imprimirData = () => {
     actualizar((querySnapshots) => {
+      publicarDiv.innerHTML = '';
       querySnapshots.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         // console.log(doc.id, doc.data());
