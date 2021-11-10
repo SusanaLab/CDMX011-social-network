@@ -140,8 +140,7 @@ background: #FBEBDB;
 
 #marcaMuro{
   color:#787878;
-  position: relative;
-  -ms-flex-item-align: center;
+  
   
 }
 .publicar{
@@ -338,12 +337,9 @@ align-items: center;
 }
 
 #formPublicaciones{
-  display: inline-flex;
-justify-content: flex-end;
-align-items:center
-
-};
-
+  flex-direction: row;
+ justify-content: center;
+}
 .divP{
   display: flex;
   width: 318px;
@@ -390,4 +386,10 @@ align-items:center
   flex-wrap: nowrap;
   display: flex;
   justify-content: flex-start;
+}
+#muroDiv{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+
 }
