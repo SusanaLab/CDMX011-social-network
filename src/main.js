@@ -1,9 +1,9 @@
 /* eslint-disable import/no-cycle */
 // eslint-disable-next-line import/named
-import { inicio } from './Componente2/Iniciar.js';
-import { muro } from './Componente2/Muro.js';
-import { registro } from './Componente2/Registro.js';
 
+import { muro } from '../src/Componente2/Muro.js';
+import { registro } from '../src/Componente2/Registro.js';
+import { inicio } from "../src/Componente2/Iniciar.js";
 const rootDiv = document.getElementById('root');
 
 const rutas = {
